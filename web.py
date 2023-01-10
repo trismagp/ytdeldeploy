@@ -20,7 +20,7 @@ def download_360p_mp4_videos(url: str, file_format: str,outpath: str = "./"):
         rename_file(out_file, "mp4")
     return yt.title
 
-st.title('My yt downloader')
+st.title('My youyou downloader')
 st.subheader('this is my music and video downloader')
 st.selectbox('Which file format?',('music', 'video'), key="file_format")
 st.text_input(label='YT url',placeholder='input youtube url here...', key="url")
