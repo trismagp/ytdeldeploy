@@ -24,11 +24,15 @@ st.title('My yt downloader')
 st.subheader('this is my music and video downloader')
 st.selectbox('Which file format?',('music', 'video'), key="file_format")
 st.text_input(label='YT url',placeholder='input youtube url here...', key="url")
+st.text_input(label='output path',value= 'C:\\Users\\Public\\Downloads',placeholder='output path here...', key="output")
+
+
 
 if st.button('Download'):
     url = st.session_state['url']
+    output = st.session_state['output']
     file_format = st.session_state['file_format'].strip()
-    title = download_360p_mp4_videos(url,file_format)
+    title = download_360p_mp4_videos(url,file_format,output)
 
     
     
