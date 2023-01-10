@@ -13,10 +13,10 @@ def rename_file(out_file, file_ext):
 def download_360p_mp4_videos(url: str, file_format: str,outpath: str = "./"):
     yt = YouTube(url)
     if file_format == "music":
-        out_file = yt.streams.filter(only_audio=True).first().download(outpath)
+        out_file = yt.streams.filter(only_audio=True).first().download()
         rename_file(out_file, "mp3")
     else:
-        out_file = yt.streams.filter(file_extension="mp4").get_by_resolution("360p").download(outpath)
+        out_file = yt.streams.filter(file_extension="mp4").get_by_resolution("360p").download()
         rename_file(out_file, "mp4")
     return yt.title
 
